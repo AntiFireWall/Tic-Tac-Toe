@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QButtonGroup>
 
 #include <QMainWindow>
 
@@ -17,7 +18,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_play_clicked();
+    void xoButtonClickHandler(int id);
+
 private:
     Ui::MainWindow *ui;
+    QButtonGroup *xoButtons;
+    void victoryDisplay();
+    void stalemateDisplay();
+
 };
 #endif // MAINWINDOW_H
