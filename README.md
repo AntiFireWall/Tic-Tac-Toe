@@ -1,32 +1,30 @@
-# Overview
+# Tic-Tac-Toe
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+## Overview
 
-{Provide a description of the software that you wrote to demonstrate the C++ language.}
+This is a Tic-Tac-Toe game made using C++ and Qt Gui Library. The players can take turn placing either an X or O on the grid until one of them gets 3 in a row OR the grid is full in which case it would be a stalemate.
 
-{Describe your purpose for writing this software.}
+The purpose for writing this software is to show what I learned of C++.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+[Tic-Tac-Toe Demo Video](https://youtu.be/lH4bs8YNtgQ)
 
-[Software Demo Video](http://youtube.link.goes.here)
+## Development Environment
 
-# Development Environment
+**Programing Language**: C++
 
-{Describe the tools that you used to develop the software}
+**Runtime environment**: MinGW (If you download the Qt Creator IDE the MinGW will be installed with it)
 
-{Describe the programming language that you used and any libraries.}
+**IDE(Integrated Development Environment)**: Qt Creator 17.0.1 (Community)
 
-# Useful Websites
+## Useful Websites
 
-{Make a list of websites that you found helpful in this project}
+- [Qt Website](https://www.qt.io)
+- [Qt Documentation](https://doc.qt.io)
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+*Note: If you download the Community version of the IDE the download speed will be very slow because It will prioritizes licensed versions over the Community version. You can try to get the educational version instead which may make your download speed faster.*
 
-# Future Work
+## Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
+- Make the program reset to default state insted of restarting.
+- Added a diffrent victory display that will turn the grid into the winners symbol.
+- Make the program remamber the player names inputed by the user for futur use.
