@@ -45,6 +45,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// Displays the victory message.
 void MainWindow::victoryDisplay() {
     if(glh.currentTurn()) {
         QString player1Victory = ui->player1display->text() + " <--- Winner!!";
@@ -59,6 +60,7 @@ void MainWindow::victoryDisplay() {
     }
 }
 
+// Displays the stalemate message.
 void MainWindow::stalemateDisplay() {
     ui->player1display->setStyleSheet("");
     ui->player2display->setStyleSheet("");
@@ -80,6 +82,7 @@ void MainWindow::on_play_clicked()
     // Setting the Player 1 Display name to "current" turn.
     ui->player1display->setStyleSheet("color: red");
 
+    // Resetting stalemateMsg text to empty.
     ui->stalemateMsg->setText("");
 
     // Hidding the menu and showing the game.
@@ -87,6 +90,7 @@ void MainWindow::on_play_clicked()
     ui->gameWidget->setVisible(true);
 }
 
+// Starts a new instance of the program and closes the old one.
 void restartApplication() {
     QString program = QCoreApplication::applicationFilePath();
     QStringList arguments = QCoreApplication::arguments();
@@ -94,8 +98,10 @@ void restartApplication() {
     QTimer::singleShot(100, QCoreApplication::instance(), &QCoreApplication::quit);
 }
 
+// This functions sets the button text to X or O based on whose turn it is and calls the processTurn function to run the game logic.
 void MainWindow::xoButtonClickHandler(int id)
 {
+    // Only run the code below if victory has not been achived.
     if(!glh.isVictoryAchived()) {
         if(glh.currentTurn()) {
             xoButtons->button(id)->setText("X");
@@ -110,6 +116,7 @@ void MainWindow::xoButtonClickHandler(int id)
             ui->player1display->setStyleSheet("color: red");
             ui->player2display->setStyleSheet("");
         }
+        // Is one of the players has won or there are no more turns left display the appropriate message. Then restart the program after 4 seconds.
         if(glh.processTurn(id)) {
             if(glh.isVictoryAchived()) {
                 victoryDisplay();

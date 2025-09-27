@@ -10,8 +10,8 @@ public:
     bool isVictoryAchived();
 
 private:
-    bool xoTurn = true;
-    int turnsLeft = 9;
+    bool xoTurn = true; // Tracks which players turn it is(True -> X, False -> O).
+    int turnsLeft = 9; // Tracks how many turns are left.
     bool isVictory = false;
 };
 
